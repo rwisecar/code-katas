@@ -176,3 +176,103 @@ This was the solution by: cvk77, zyrolasting
 def disemvowel(s):
     return s.translate(None, "aeiouAEIOU")
 ```
+
+## Problem 16: Reverse Words (7kyu)
+Module Name: reverse.py
+Test Module Name: test_reverse.py
+Link: https://www.codewars.com/kata/5259b20d6021e9e14c0010d4/train/python
+Best Solution:
+```python
+This was the solution by: phatcabbage, warwickwang (plus 9 more warriors)
+def reverse_words(str):
+    return ' '.join(s[::-1] for s in str.split(' '))
+```
+
+#*Test Coverage*
+
+```
+---------- coverage: platform darwin, python 2.7.10-final-0 ----------
+Name                          Stmts   Miss  Cover   Missing
+-----------------------------------------------------------
+src/alt_case.py                   2      0   100%
+src/convert.py                    3      0   100%
+src/disemvowel.py                 3      0   100%
+src/even_odd.py                   4      0   100%
+src/fatcat.py                     2      0   100%
+src/get_grade.py                 11      0   100%
+src/jenny.py                      4      0   100%
+src/minmax.py                     4      0   100%
+src/monkey.py                     2      0   100%
+src/next_sq.py                    6      0   100%
+src/return_negative.py            2      0   100%
+src/reverse.py                    2      0   100%
+src/sort_bylength.py              2      0   100%
+src/string2num.py                 2      0   100%
+src/sum_highlow.py                4      0   100%
+src/sum_positive.py               4      0   100%
+src/test_altcase.py              13      0   100%
+src/test_convert.py               5      0   100%
+src/test_disemvowel.py            6      0   100%
+src/test_even_odd.py              5      0   100%
+src/test_fatcat.py               13      0   100%
+src/test_grade.py                24      1    96%   48
+src/test_jenny.py                 5      0   100%
+src/test_minmax.py               22      0   100%
+src/test_monkey.py               11      0   100%
+src/test_nextsq.py               16      7    56%   26-27, 32-36
+src/test_return_negative.py      12      0   100%
+src/test_reverse.py               6      0   100%
+src/test_sortlength.py           15      0   100%
+src/test_string2num.py           10      0   100%
+src/test_sum_highlow.py          14      0   100%
+src/test_sum_positive.py          5      0   100%
+-----------------------------------------------------------
+TOTAL                           239      8    97%
+
+
+==================================== 118 passed in 3.01 seconds =====================================
+---------- coverage: platform darwin, python 3.5.2-final-0 -----------
+Name                          Stmts   Miss  Cover   Missing
+-----------------------------------------------------------
+src/alt_case.py                   2      0   100%
+src/convert.py                    3      0   100%
+src/disemvowel.py                 3      0   100%
+src/even_odd.py                   4      0   100%
+src/fatcat.py                     2      0   100%
+src/get_grade.py                 11      0   100%
+src/jenny.py                      4      0   100%
+src/minmax.py                     4      0   100%
+src/monkey.py                     2      0   100%
+src/next_sq.py                    6      0   100%
+src/return_negative.py            2      0   100%
+src/reverse.py                    2      0   100%
+src/sort_bylength.py              2      0   100%
+src/string2num.py                 2      0   100%
+src/sum_highlow.py                4      0   100%
+src/sum_positive.py               4      0   100%
+src/test_altcase.py              13      0   100%
+src/test_convert.py               5      0   100%
+src/test_disemvowel.py            6      0   100%
+src/test_even_odd.py              5      0   100%
+src/test_fatcat.py               13      0   100%
+src/test_grade.py                24      1    96%   48
+src/test_jenny.py                 5      0   100%
+src/test_minmax.py               22      0   100%
+src/test_monkey.py               11      0   100%
+src/test_nextsq.py               16      7    56%   26-27, 32-36
+src/test_return_negative.py      12      0   100%
+src/test_reverse.py               6      0   100%
+src/test_sortlength.py           15      0   100%
+src/test_string2num.py           10      0   100%
+src/test_sum_highlow.py          14      0   100%
+src/test_sum_positive.py          5      0   100%
+-----------------------------------------------------------
+TOTAL                           239      8    97%
+
+
+==================================== 118 passed in 5.07 seconds =====================================
+______________________________________________ summary ______________________________________________
+  py27: commands succeeded
+  py35: commands succeeded
+  congratulations :)
+```
