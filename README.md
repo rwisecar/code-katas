@@ -91,11 +91,23 @@ def sum_array(arr):
 ## Problem 8: Count the Monkeys
 Module Name: monkey.py
 Test Module Name: text_monkey.py
-Link:
+Link: https://www.codewars.com/kata/56f69d9f9400f508fb000ba7/solutions/python
 Best Solution:
 ```python
 This was the solution by: Nestorfish, VadimPopov (plus 236 more warriors)
 def monkey_count(n):
     return range(1, n+1)
 ```
+
+## Problem 9: Alternating Case
+Module Name: alt_case.py
+Test Module Name: test_altcase.py
+Link: https://www.codewars.com/kata/alternating-case-%3C-equals-%3E-alternating-case/train/python
+Best Solution:
+```python
+This was the solution by: Nestorfish, Demon Slayer (plus 147 more warriors)
+def to_alternating_case(string):
+    return string.swapcase()
+```
+
 
