@@ -62,5 +62,19 @@ def positive_sum(arr):
     return sum(x for x in arr if x > 0)
 ```
 
+## Problem 6: Jenny's Secret Message
+Module Name: jenny.py
+Test Module Name: test_jenny.py
+Link: https://www.codewars.com/kata/jennys-secret-message/train/python
+Best Solution:
+```python
+This was the solution by: mortonfox, jolaf, bkaes (plus 641 more warriors)
+def greet(name):
+    if name == "Johnny":
+        return "Hello, my love!"
+    return "Hello, {name}!".format(name=name)
+```
+
+
 
 
