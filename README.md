@@ -12,12 +12,14 @@ def make_negative(number):
     return -abs(number)
 ```
 
+
 ## Problem 2: Find Maximum and Minimum Values of a List
 Module Name: minmax.py
 Test Module Name: test_minmax.py
 Link: https://www.codewars.com/kata/577a98a6ae28071780000989/train/python
 Best solution:
 ```python
+This was the solution by: snormandeau, Pang Wang
 def m(arr):
     return min(arr)
 
@@ -25,3 +27,16 @@ def m(arr):
     return max(arr)
 ```
 *Note- I did not think you could use the actual min/ max functions for this!*
+
+
+## Problem 3: Even or Odd
+Module Name: even_odd.py
+Test Module Name: test_even_odd.py
+Link: https://www.codewars.com/kata/53da3dbb4a5168369a0000fe/train/python
+Best solution:
+```python
+This was the solution by: laoris, colbydauph, (plus 212 more warriors)
+def even_or_odd(number):
+  return 'Odd' if number % 2 else 'Even'
+```
+
