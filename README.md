@@ -121,3 +121,13 @@ def get_grade(s1, s2, s3):
     return {6:'D', 7:'C', 8:'B', 9:'A', 10:'A'}.get((s1 + s2 + s3) / 30, 'F')
 ```
 
+## Problem 11: Convert a String to a Number
+Module Name: string2num.py
+Test Module Name: test_string2num.py
+Link: https://www.codewars.com/kata/convert-a-string-to-a-number/train/python
+Best Solution:
+```python
+This was the solution by warwickwang (plus 1307 more warriors)
+def string_to_number(s):
+    return int(s)
+```
