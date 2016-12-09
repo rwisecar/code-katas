@@ -135,10 +135,22 @@ def string_to_number(s):
 ## Problem 12: Do I Get a Bonus?
 Module Name: fatcat.py
 Test Module Name: test_fatcat.py
-https://www.codewars.com/kata/do-i-get-a-bonus/train/python
+Link: https://www.codewars.com/kata/do-i-get-a-bonus/train/python
 Best Solution:
 ```python
 This was the solution by zebulan, ChristianECooper, AbuBakar2001, christoph531, tedmiston
 def bonus_time(salary, bonus):
     return "${}".format(salary * (10 if bonus else 1))
+```
+
+## Problem 13: Find the Next Perfect Sq (7kyu)
+Module Name: next_sq.py
+Test Module Name: test_nextsq.py
+Link: https://www.codewars.com/kata/find-the-next-perfect-square/train/python
+Best Solution:
+```python
+This was the solution by Beast, nicolasreymond
+def find_next_square(sq):
+    x = sq**0.5
+    return -1 if x % 1 else (x+1)**2
 ```
