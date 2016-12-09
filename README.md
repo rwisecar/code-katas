@@ -165,3 +165,14 @@ This was the solution by: the_roth, iNovice_ (plus 81 more warriors)
 def sort_by_length(arr):
     return sorted(arr, key=len)
 ```
+
+## Problem 15: Disemvowel Trolls (7kyu)
+Module Name: disemvowel.py
+Test Module Name: test_disemvowel.py
+Link: https://www.codewars.com/kata/52fba66badcd10859f00097e/train/python
+Best Solution:
+```python
+This was the solution by: cvk77, zyrolasting
+def disemvowel(s):
+    return s.translate(None, "aeiouAEIOU")
+```
