@@ -51,4 +51,16 @@ def digitize(n):
     return map(int, str(n)[::-1])
 ```
 
+## Problem 5: Sum of Positive
+Module Name: sum_positive.py
+Test Module Name: test_sum_positive.py
+Link: https://www.codewars.com/kata/sum-of-positive/train/python
+Best Solution:
+```python
+This was the solution by: lancelote, CrazyMerlyn (plus 56 more warriors)
+def positive_sum(arr):
+    return sum(x for x in arr if x > 0)
+```
+
+
 
