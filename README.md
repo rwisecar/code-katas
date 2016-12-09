@@ -131,3 +131,14 @@ This was the solution by warwickwang (plus 1307 more warriors)
 def string_to_number(s):
     return int(s)
 ```
+
+## Problem 12: Do I Get a Bonus?
+Module Name: fatcat.py
+Test Module Name: test_fatcat.py
+https://www.codewars.com/kata/do-i-get-a-bonus/train/python
+Best Solution:
+```python
+This was the solution by zebulan, ChristianECooper, AbuBakar2001, christoph531, tedmiston
+def bonus_time(salary, bonus):
+    return "${}".format(salary * (10 if bonus else 1))
+```
