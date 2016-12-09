@@ -1,9 +1,8 @@
-"""This is the test file for return_negative.py.
-I refactored Code Wars' test because it relied on a Test class I don't have."""
+"""This is the test file for return_negative.py."""
 
+import pytest
 from random import randint as rnd
 from return_negative import make_negative
-import pytest
 
 PARAMS_TABLE = [
     [42, -42],
