@@ -91,7 +91,7 @@ def sum_array(arr):
 ## Problem 8: Count the Monkeys
 Module Name: monkey.py
 Test Module Name: text_monkey.py
-Link: https://www.codewars.com/kata/56f69d9f9400f508fb000ba7/solutions/python
+Link: https://www.codewars.com/kata/56f69d9f9400f508fb000ba7/train/python
 Best Solution:
 ```python
 This was the solution by: Nestorfish, VadimPopov (plus 236 more warriors)
@@ -110,4 +110,14 @@ def to_alternating_case(string):
     return string.swapcase()
 ```
 
+## Problem 10: Grade Book
+Module Name: get_grade.py
+Test Module Name: test_grade.py
+Link: https://www.codewars.com/kata/grasshopper-grade-book/train/python
+Best Solution:
+```python
+This was the solution by acaccia:
+def get_grade(s1, s2, s3):
+    return {6:'D', 7:'C', 8:'B', 9:'A', 10:'A'}.get((s1 + s2 + s3) / 30, 'F')
+```
 
