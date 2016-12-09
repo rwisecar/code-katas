@@ -154,3 +154,14 @@ def find_next_square(sq):
     x = sq**0.5
     return -1 if x % 1 else (x+1)**2
 ```
+
+## Problem 14: Sort Array by String Length (7kyu)
+Module Name: sort_bylength.py
+Test Module Name: test_sortlength.py
+Link: https://www.codewars.com/kata/sort-array-by-string-length/train/python
+Best Solution:
+```python
+This was the solution by: the_roth, iNovice_ (plus 81 more warriors)
+def sort_by_length(arr):
+    return sorted(arr, key=len)
+```
