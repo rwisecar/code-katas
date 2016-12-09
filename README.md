@@ -75,6 +75,27 @@ def greet(name):
     return "Hello, {name}!".format(name=name)
 ```
 
+## Problem 7: Sum without highest and lowest number
+Module Name: sum_highlow.py
+Test Module Name: test_sum_highlow.py
+Link: https://www.codewars.com/kata/sum-without-highest-and-lowest-number/train/python
+Best Solution:
+```python
+This was the solution by: eqlion
+def sum_array(arr):
+    if arr == None or len(arr) < 3:
+        return 0
+    return sum(arr) - max(arr) - min(arr)
+```
 
-
+## Problem 8: Count the Monkeys
+Module Name: monkey.py
+Test Module Name: text_monkey.py
+Link:
+Best Solution:
+```python
+This was the solution by: Nestorfish, VadimPopov (plus 236 more warriors)
+def monkey_count(n):
+    return range(1, n+1)
+```
 
