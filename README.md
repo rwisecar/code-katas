@@ -40,3 +40,15 @@ def even_or_odd(number):
   return 'Odd' if number % 2 else 'Even'
 ```
 
+## Problem 4: Convert number to reversed array of digits
+Module Name: convert.py
+Test Module Name: test_convert.py
+Link: https://www.codewars.com/kata/convert-number-to-reversed-array-of-digits/train/python
+Best solution:
+```python
+This was the solution by: colbydauph, vishnub (plus 58 more warriors)
+def digitize(n):
+    return map(int, str(n)[::-1])
+```
+
+
