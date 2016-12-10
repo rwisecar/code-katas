@@ -30,6 +30,6 @@ CONVERT_PARAMS_TABLE = [
 
 @pytest.mark.parametrize('n, result', CONVERT_PARAMS_TABLE)
 def test_convert(n, result):
-    """Test for digitize function"""
+    """Test for digitize function."""
     from convert import digitize
     assert digitize(n) == result

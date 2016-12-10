@@ -13,15 +13,18 @@ PARAMS_TABLE = [
 
 @pytest.mark.parametrize('n, result', PARAMS_TABLE)
 def test_return_negative(n, result):
+    """Test generic use cases."""
     assert make_negative(n) == result
 
 
 def test_random_positive_negative():
+    """Test random positive number test cases."""
     number = rnd(1, 1000)
     assert make_negative(number) == -abs(number)
 
 
 def test_random_negative_negative():
+    """Test random negative number test cases."""
     number = rnd(-1000, 0)
     assert make_negative(number) == -abs(number)
 

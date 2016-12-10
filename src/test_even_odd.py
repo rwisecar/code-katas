@@ -30,6 +30,6 @@ EVEN_ODD_PARAMS_TABLE = [
 
 @pytest.mark.parametrize('n, result', EVEN_ODD_PARAMS_TABLE)
 def test_even_odd(n, result):
-    """Test the even/odd function"""
+    """Test the even/odd function."""
     from even_odd import even_or_odd
     assert even_or_odd(n) == result

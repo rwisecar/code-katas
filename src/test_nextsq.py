@@ -17,7 +17,7 @@ SQRT_PARAMS_TABLE = [
 
 @pytest.mark.parametrize('n, result', SQRT_PARAMS_TABLE)
 def test_nextsq(n, result):
-    """Runs the basic test cases for find_next_square()"""
+    """Run the basic test cases for find_next_square()"""
     assert find_next_square(n) == result
 
 
@@ -28,7 +28,7 @@ def solution(sq):
 
 
 def rest_randomsq():
-    """Tests random use cases for find_next_square() using solution()"""
+    """Test random use cases for find_next_square() using solution()"""
     from random import randint, uniform
     for _ in range(40):
         sq = int(uniform(0, 1) * 10 ** randint(1, 5))

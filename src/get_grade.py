@@ -2,6 +2,7 @@
 
 
 def get_grade(s1, s2, s3):
+    """Return letter grade reflecting average grade in class."""
     avg_grade = (s1 + s2 + s3) / 3
     if avg_grade >= 90:
         return 'A'

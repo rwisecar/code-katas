@@ -16,7 +16,7 @@ FATCAT_PARAMS_TABLE = [
 
 @pytest.mark.parametrize("m, n, result", FATCAT_PARAMS_TABLE)
 def test_bonus(m, n, result):
-    """Test the basic use cases for bonus_time()"""
+    """Test the basic use cases for bonus_time()."""
     assert bonus_time(m, n) == result
 
 

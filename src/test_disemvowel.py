@@ -12,7 +12,7 @@ DISEMVOWEL_PARAMS_TABLE = [
 
 @pytest.mark.parametrize('n, result', DISEMVOWEL_PARAMS_TABLE)
 def test_disemvowel(n, result):
-    """Run basic test cases for disemvowel()"""
+    """Run basic test cases for disemvowel()."""
     assert disemvowel(n) == result
 
 

@@ -4,4 +4,5 @@ Return in $XX format."""
 
 
 def bonus_time(salary, bonus):
+    """Check to see if bonus, and return salary accordingly."""
     return "${}".format(salary * 10) if bonus else "${}".format(salary)

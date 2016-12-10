@@ -28,12 +28,12 @@ GRADE_PARAMS_TABLE = [
 
 @pytest.mark.parametrize("s, t, u, result", GRADE_PARAMS_TABLE)
 def test_get_grade(s, t, u, result):
-    """Test basic use cases for get_grade()"""
+    """Test basic use cases for get_grade()."""
     assert get_grade(s, t, u) == result
 
 
 def test_random_grades():
-    """Test random use cases for get_grade()"""
+    """Test random use cases for get_grade()."""
     for i in range(100):
         rand1 = random.randint(0, 100)
         rand2 = random.randint(0, 100)
@@ -42,7 +42,7 @@ def test_random_grades():
 
 
 def solution(s1, s2, s3):
-    """A test case provided by Code Wars for the test_random_grades fcn"""
+    """Test case provided by Code Wars for the test_random_grades fcn."""
     s = (s1 + s2 + s3) / 3
     if s >= 90:
         return "A"

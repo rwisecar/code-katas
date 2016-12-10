@@ -5,6 +5,7 @@ import math
 
 
 def find_next_square(sq):
+    """If perfect square input, return next perfect square. Else return -1."""
     root = math.sqrt(sq)
     if root == round(root):
         return (root + 1) ** 2

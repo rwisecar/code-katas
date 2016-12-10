@@ -2,4 +2,5 @@
 
 
 def to_alternating_case(string):
+    """Input a string, return string with case swapped"""
     return "".join([s.swapcase() for s in string])

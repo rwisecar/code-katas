@@ -18,12 +18,12 @@ ALTCASE_PARAMS_TABLE = [
 
 @pytest.mark.parametrize("n, result", ALTCASE_PARAMS_TABLE)
 def test_altcase(n, result):
-    """Tests the basic use cases of to_alternate_case()"""
+    """Tests the basic use cases of to_alternate_case()."""
     assert to_alternating_case(n) == result
 
 
 def test_random_altcase():
-    """Tests random use cases of to_alternate_case(), from Code Wars"""
+    """Tests random use cases of to_alternate_case(), from Code Wars."""
     from random import randint
     sol = lambda s: "".join([x.lower() if x == x.upper() else x.upper() for x in s])
     base = "abcdefghijklmnopqrstuvwxyz ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789 .,;:!?/"

@@ -4,4 +4,5 @@ White space should also be maintained."""
 
 
 def reverse_words(str):
+    """Reverse the order of letters in each word in a string."""
     return " ".join(["".join(s[::-1]) for s in str.split(" ")])

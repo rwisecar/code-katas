@@ -11,6 +11,7 @@ def mini(lst):
 
 
 def maxi(lst):
+    """returns the largest item in a list"""
     if lst:
         return sorted(lst)[-1]
     return lst
