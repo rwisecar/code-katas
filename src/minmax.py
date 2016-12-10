@@ -5,8 +5,12 @@ The second function returns the largest item in that list."""
 
 def mini(lst):
     """Returns the smallest item in an list"""
-    return sorted(lst)[0]
+    if lst:
+        return sorted(lst)[0]
+    return lst
 
 
 def maxi(lst):
-    return sorted(lst)[-1]
+    if lst:
+        return sorted(lst)[-1]
+    return lst
