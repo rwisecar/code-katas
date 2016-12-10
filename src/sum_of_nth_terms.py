@@ -8,6 +8,7 @@ def series_sum(n):
     if n < 1:
         return '0.00'
     for i in range(1, n + 1):
+        # Math from Stack Overflow
         total += 1.0 / (3 * i - 2)
         if i == n:
             # 2 decimal place string formatting found on Stack Overflow
