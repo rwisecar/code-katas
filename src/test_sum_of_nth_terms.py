@@ -31,8 +31,9 @@ def test_random_series_nth():
     """Test random use cases of series_sum()."""
     from random import randint
     sol = lambda n: '0.00' if n == 0 else (lambda s: s[:-2] + "." + s[-2:])(str(int(round(sum([1.0 / (1 + i * 3) for i in range(n)]) * 100))))
-    n = randint(0, 100)
-    assert series_sum(n) == sol(n)
+    for i in range(100):
+        n = randint(0, 100)
+        assert series_sum(n) == sol(n)
 
 
 """Below are the test cases taken from Code Wars, which I've refactored.
