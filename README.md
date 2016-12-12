@@ -188,91 +188,153 @@ def reverse_words(str):
     return ' '.join(s[::-1] for s in str.split(' '))
 ```
 
+## Problem 16: Sum of First nth Term of Series
+Module Name: sum_of_nth_terms.py
+Test Module Name: test_sum_of_nth_terms.py
+Link: http://www.codewars.com/kata/sum-of-the-first-nth-term-of-series/python
+Best Solution:
+```python
+This was the solution by: MMMAAANNN, doctornick5, Slx64
+def series_sum(n):
+    return '{:.2f}'.format(sum(1.0/(3 * i + 1) for i in range(n)))
+```
+
+
 #*Test Coverage*
 
 ```
+py27 installed: coverage==4.2,py==1.4.31,pytest==3.0.5,pytest-cov==2.4.0,snowday==0.1
+py27 runtests: commands[0] | py.test src --cov=src --cov-report term-missing
+============================================================================= test session starts =============================================================================
+platform darwin -- Python 2.7.10, pytest-3.0.5, py-1.4.31, pluggy-0.4.0
+plugins: cov-2.4.0
+collected 134 items 
+
+src/test_altcase.py ..........
+src/test_convert.py .....
+src/test_disemvowel.py ...
+src/test_even_odd.py .........
+src/test_fatcat.py ........
+src/test_grade.py ..................
+src/test_jenny.py ....
+src/test_minmax.py ..............
+src/test_monkey.py ......
+src/test_nextsq.py ......
+src/test_return_negative.py .....
+src/test_reverse.py ....
+src/test_sortlength.py .......
+src/test_string2num.py .....
+src/test_sum_highlow.py ...........
+src/test_sum_of_nth_terms.py ..............
+src/test_sum_positive.py .....
+
 ---------- coverage: platform darwin, python 2.7.10-final-0 ----------
-Name                          Stmts   Miss  Cover   Missing
------------------------------------------------------------
-src/alt_case.py                   2      0   100%
-src/convert.py                    3      0   100%
-src/disemvowel.py                 3      0   100%
-src/even_odd.py                   4      0   100%
-src/fatcat.py                     2      0   100%
-src/get_grade.py                 11      0   100%
-src/jenny.py                      4      0   100%
-src/minmax.py                     4      0   100%
-src/monkey.py                     2      0   100%
-src/next_sq.py                    6      0   100%
-src/return_negative.py            2      0   100%
-src/reverse.py                    2      0   100%
-src/sort_bylength.py              2      0   100%
-src/string2num.py                 2      0   100%
-src/sum_highlow.py                4      0   100%
-src/sum_positive.py               4      0   100%
-src/test_altcase.py              13      0   100%
-src/test_convert.py               5      0   100%
-src/test_disemvowel.py            6      0   100%
-src/test_even_odd.py              5      0   100%
-src/test_fatcat.py               13      0   100%
-src/test_grade.py                24      1    96%   48
-src/test_jenny.py                 5      0   100%
-src/test_minmax.py               22      0   100%
-src/test_monkey.py               11      0   100%
-src/test_nextsq.py               16      7    56%   26-27, 32-36
-src/test_return_negative.py      12      0   100%
-src/test_reverse.py               6      0   100%
-src/test_sortlength.py           15      0   100%
-src/test_string2num.py           10      0   100%
-src/test_sum_highlow.py          14      0   100%
-src/test_sum_positive.py          5      0   100%
------------------------------------------------------------
-TOTAL                           239      8    97%
+Name                           Stmts   Miss  Cover   Missing
+------------------------------------------------------------
+src/alt_case.py                    2      0   100%
+src/convert.py                     3      0   100%
+src/disemvowel.py                  3      0   100%
+src/even_odd.py                    4      0   100%
+src/fatcat.py                      2      0   100%
+src/get_grade.py                  11      0   100%
+src/jenny.py                       4      0   100%
+src/minmax.py                      8      0   100%
+src/monkey.py                      2      0   100%
+src/next_sq.py                     6      0   100%
+src/return_negative.py             2      0   100%
+src/reverse.py                     2      0   100%
+src/sort_bylength.py               2      0   100%
+src/string2num.py                  2      0   100%
+src/sum_highlow.py                 4      0   100%
+src/sum_of_nth_terms.py            8      0   100%
+src/sum_positive.py                4      0   100%
+src/test_altcase.py               13      0   100%
+src/test_convert.py                5      0   100%
+src/test_disemvowel.py             6      0   100%
+src/test_even_odd.py               5      0   100%
+src/test_fatcat.py                13      0   100%
+src/test_grade.py                 24      1    96%   48
+src/test_jenny.py                  5      0   100%
+src/test_minmax.py                22      0   100%
+src/test_monkey.py                11      0   100%
+src/test_nextsq.py                16      7    56%   26-27, 32-36
+src/test_return_negative.py       12      0   100%
+src/test_reverse.py                6      0   100%
+src/test_sortlength.py            15      0   100%
+src/test_string2num.py            10      0   100%
+src/test_sum_highlow.py           14      0   100%
+src/test_sum_of_nth_terms.py      11      0   100%
+src/test_sum_positive.py           5      0   100%
+------------------------------------------------------------
+TOTAL                            262      8    97%
 
 
-==================================== 118 passed in 3.01 seconds =====================================
+========================================================================= 134 passed in 3.08 seconds ==========================================================================
+py35 installed: coverage==4.2,py==1.4.31,pytest==3.0.5,pytest-cov==2.4.0,snowday==0.1
+py35 runtests: commands[0] | py.test src --cov=src --cov-report term-missing
+============================================================================= test session starts =============================================================================
+platform darwin -- Python 3.5.2, pytest-3.0.5, py-1.4.31, pluggy-0.4.0
+plugins: cov-2.4.0
+collected 134 items 
+
+src/test_altcase.py ..........
+src/test_convert.py .....
+src/test_disemvowel.py ...
+src/test_even_odd.py .........
+src/test_fatcat.py ........
+src/test_grade.py ..................
+src/test_jenny.py ....
+src/test_minmax.py ..............
+src/test_monkey.py ......
+src/test_nextsq.py ......
+src/test_return_negative.py .....
+src/test_reverse.py ....
+src/test_sortlength.py .......
+src/test_string2num.py .....
+src/test_sum_highlow.py ...........
+src/test_sum_of_nth_terms.py ..............
+src/test_sum_positive.py .....
+
 ---------- coverage: platform darwin, python 3.5.2-final-0 -----------
-Name                          Stmts   Miss  Cover   Missing
------------------------------------------------------------
-src/alt_case.py                   2      0   100%
-src/convert.py                    3      0   100%
-src/disemvowel.py                 3      0   100%
-src/even_odd.py                   4      0   100%
-src/fatcat.py                     2      0   100%
-src/get_grade.py                 11      0   100%
-src/jenny.py                      4      0   100%
-src/minmax.py                     4      0   100%
-src/monkey.py                     2      0   100%
-src/next_sq.py                    6      0   100%
-src/return_negative.py            2      0   100%
-src/reverse.py                    2      0   100%
-src/sort_bylength.py              2      0   100%
-src/string2num.py                 2      0   100%
-src/sum_highlow.py                4      0   100%
-src/sum_positive.py               4      0   100%
-src/test_altcase.py              13      0   100%
-src/test_convert.py               5      0   100%
-src/test_disemvowel.py            6      0   100%
-src/test_even_odd.py              5      0   100%
-src/test_fatcat.py               13      0   100%
-src/test_grade.py                24      1    96%   48
-src/test_jenny.py                 5      0   100%
-src/test_minmax.py               22      0   100%
-src/test_monkey.py               11      0   100%
-src/test_nextsq.py               16      7    56%   26-27, 32-36
-src/test_return_negative.py      12      0   100%
-src/test_reverse.py               6      0   100%
-src/test_sortlength.py           15      0   100%
-src/test_string2num.py           10      0   100%
-src/test_sum_highlow.py          14      0   100%
-src/test_sum_positive.py          5      0   100%
------------------------------------------------------------
-TOTAL                           239      8    97%
+Name                           Stmts   Miss  Cover   Missing
+------------------------------------------------------------
+src/alt_case.py                    2      0   100%
+src/convert.py                     3      0   100%
+src/disemvowel.py                  3      0   100%
+src/even_odd.py                    4      0   100%
+src/fatcat.py                      2      0   100%
+src/get_grade.py                  11      0   100%
+src/jenny.py                       4      0   100%
+src/minmax.py                      8      0   100%
+src/monkey.py                      2      0   100%
+src/next_sq.py                     6      0   100%
+src/return_negative.py             2      0   100%
+src/reverse.py                     2      0   100%
+src/sort_bylength.py               2      0   100%
+src/string2num.py                  2      0   100%
+src/sum_highlow.py                 4      0   100%
+src/sum_of_nth_terms.py            8      0   100%
+src/sum_positive.py                4      0   100%
+src/test_altcase.py               13      0   100%
+src/test_convert.py                5      0   100%
+src/test_disemvowel.py             6      0   100%
+src/test_even_odd.py               5      0   100%
+src/test_fatcat.py                13      0   100%
+src/test_grade.py                 24      0   100%
+src/test_jenny.py                  5      0   100%
+src/test_minmax.py                22      0   100%
+src/test_monkey.py                11      0   100%
+src/test_nextsq.py                16      7    56%   26-27, 32-36
+src/test_return_negative.py       12      0   100%
+src/test_reverse.py                6      0   100%
+src/test_sortlength.py            15      0   100%
+src/test_string2num.py            10      0   100%
+src/test_sum_highlow.py           14      0   100%
+src/test_sum_of_nth_terms.py      11      0   100%
+src/test_sum_positive.py           5      0   100%
+------------------------------------------------------------
+TOTAL                            262      7    97%
 
 
-==================================== 118 passed in 5.07 seconds =====================================
-______________________________________________ summary ______________________________________________
-  py27: commands succeeded
-  py35: commands succeeded
-  congratulations :)
+========================================================================= 134 passed in 5.85 seconds ==========================================================================
 ```
