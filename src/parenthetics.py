@@ -1,6 +1,9 @@
-"""Create a data structure that takes in a unicode string of parentheses.
-Check whether the last item is open '(', broken '))', or unbalanced.
-A string is unbalanced if there is an unequal number of ')' and '('."""
+"""Create a data structure that takes in a unicode string of parentheses,
+and pushes it into a doubly linked list.
+The balanced function checks whether each open paren in the list is matched.
+If there is an unmatched open paren, the function will return 1.
+If there is an unmatched closed paren, it will return -1.
+If all parens are properly matched in the doubly linked list, it returns 0."""
 
 
 class Node(object):
@@ -18,25 +21,22 @@ class DoubleLink(object):
 
     The push() function adds new values to the list.
 
-    The open() function checks whether the last value is an open paren.
+    The balanced() function checks for three things.
+    It returns 0 if each open paren is followed by a closed paren.
+    It returns 1 if there is an unmatched open paren.
+    It returns -1 if there is an unmatched closed paren."""
 
-    The broken() function checks whether the last two values are '))'.
-
-    The balanced() function checks for an equal number of ')' and '('."""
-
-    def __init__(self, head=None, iterable=None):
+    def __init__(self, iterable=None):
         """Create an instance of a doubly linked list."""
         self._length = 0
         self.head = None
         self.tail = None
 
-        if iterable and hasattr(iterable, "__iter__"):
+        if iterable:
             for value in iterable:
                 self.push(value)
         elif iterable:
             raise TypeError
-        elif head and not iterable:
-            self.push(head)
 
     def push(self, value):
         """Add new value to the front of a doubly linked list."""
@@ -49,3 +49,32 @@ class DoubleLink(object):
             self.head = new_node
             self.tail = new_node
         self._length += 1
+
+    def balanced(self):
+        """Return 0 if equal number of matching open and closed parens.
+        Return 1 if there is an open, unmatched, paren.
+        Return -1 if there is an unmatched closed paren."""
+
+        paren_dict = {'(': ')', ')': '('}
+
+        if self.head:
+            current = self.head
+            if current.value == ')':
+                return -1
+            elif current.value == '(':
+                while current:
+                    if current == self.tail:
+                        if current == ')':
+                            return 0
+                        elif current == '(':
+                            return 1
+                    elif current.next_node.value != paren_dict[current.value]:
+                        if current.value == '(':
+                            return 1
+                        return -1
+                    current = current.next_node
+                return 0
+            else:
+                raise ValueError("Value not in list.")
+        else:
+            raise ValueError("Cannot balance an empty list.")
