@@ -5,8 +5,8 @@ Account for dictionary order and capitalization."""
 
 def autocomplete(input_, dictionary):
     return_arr = []
-    cap_input = input_.capitalize()
-    for d in dictionary[:5]:
-        if d[:len(input_)] == input_ or d[:len(input_)] == cap_input:
+    input_ = "".join([i for i in list(input_) if i.isalpha()])
+    for d in dictionary:
+        if d.lower().startswith(input_.lower()):
             return_arr.append(d)
-    return return_arr
+    return return_arr[:5]
