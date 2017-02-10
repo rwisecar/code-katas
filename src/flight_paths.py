@@ -3,8 +3,7 @@
 2. The distance from one city to the next.
 """
 import json
-import sys
-
+import os
 from flight_graph import Graph
 
 
@@ -44,7 +43,7 @@ def calculate_distance(point1, point2):
 
 def lat_long_dict():
     """Find each city's latitude and longitude and save in a dictionary."""
-    flight_data = get_json('flight_data.json')
+    flight_data = get_json('/Users/rachaelwisecarver/codefellows/401/wk1/day5/snowday/code-katas/flight_data.json')
     lat_long = {}
     for item in flight_data:
         lat_long[item['city']] = item['lat_lon']
@@ -58,13 +57,13 @@ def create_graph():
     up, but the route will not be favored when calculating the shortest flight
     path.
     """
-    flight_data = get_json('flight_data.json')
+    flight_data = get_json('/Users/rachaelwisecarver/codefellows/401/wk1/day5/snowday/code-katas/flight_data.json')
     lat_long = lat_long_dict()
     connections = Graph()
     for item in flight_data:
         start = item['city']
         for destination in item['destination_cities']:
-            if destination in lat_long.keys():
+            if destination in list(lat_long.keys()):
                 connections.add_edge(
                     start, destination, calculate_distance(
                         lat_long[start], lat_long[destination]))
@@ -85,7 +84,7 @@ def flight_path(start, dest, checked=None):
     elif dest not in unvisited:
         raise ValueError("There is no connection between those cities.")
     elif dest in connections.graph[start]:
-        return "There is a direct flight from {} to {}, which lasts {} miles.".format(start, dest, connections.graph[start][dest])
+        return "There is a direct flight from {} to {}, at {} miles.".format(start, dest, connections.graph[start][dest])
 
     current = start
     while unvisited:
@@ -110,7 +109,7 @@ def flight_path(start, dest, checked=None):
                 continue
 
         if current == dest:
-            if path[dest][0] > 100000:
+            if path[dest][0] > 100000 or path[dest] == [None, [None]]:
                 return "{}. Caution: the distance of this path may be inaccurate due to lack of location data on one or more city.".format(path[dest])
             return path[dest]
 
