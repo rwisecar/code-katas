@@ -210,6 +210,17 @@ def sort_cards(cards):
     return sorted(cards, key="A23456789TJQK".index)
 ```
 
+## Problem 19: Autocomplete
+Module Name: autocomplete.py
+Test Module Name: test_autocomplete.py
+Link: https://www.codewars.com/kata/5389864ec72ce03383000484
+Best Solution:
+```python
+This was the solution by: s-lugo
+def autocomplete(input_, dictionary):
+    input_ = ''.join( [ c for c in list(input_) if c.isalpha() ])
+    return [ x for x in dictionary if x.lower().startswith(input_.lower()) ][:5]
+```
 
 #*Test Coverage*
 
