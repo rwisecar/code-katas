@@ -222,6 +222,16 @@ def autocomplete(input_, dictionary):
     return [ x for x in dictionary if x.lower().startswith(input_.lower()) ][:5]
 ```
 
+## Problem 20: Forbes List
+Module Name: forbes.py
+Test Module Name: test_forbes.py
+Problem Link: https://codefellows.github.io/sea-python-401d5/assignments/kata_forbes_billionaires.html
+Task: Without using a sorting method, write a function that returns the name, net worth, and industry of:
+1. the oldest billionaire under 80 years old, and
+2. the youngest billionaire with a valid age.
+
+"""
+
 #*Test Coverage*
 
 ```
@@ -229,10 +239,12 @@ def autocomplete(input_, dictionary):
 Name                           Stmts   Miss  Cover   Missing
 ------------------------------------------------------------
 src/alt_case.py                    2      0   100%
+src/autocomplete.py                7      0   100%
 src/convert.py                     3      0   100%
 src/disemvowel.py                  3      0   100%
 src/even_odd.py                    4      0   100%
 src/fatcat.py                      2      0   100%
+src/forbes.py                     19      0   100%
 src/get_grade.py                  11      0   100%
 src/jenny.py                       4      0   100%
 src/minmax.py                      8      0   100%
@@ -242,16 +254,19 @@ src/parenthetics.py               45      3    93%   39, 68, 70
 src/return_negative.py             2      0   100%
 src/reverse.py                     2      0   100%
 src/sort_bylength.py               2      0   100%
-src/sort_cards.py                  7      0   100%
+src/sort_cards.py                  3      0   100%
 src/string2num.py                  2      0   100%
+src/string_pyramid.py              0      0   100%
 src/sum_highlow.py                 4      0   100%
 src/sum_of_nth_terms.py            5      0   100%
 src/sum_positive.py                4      0   100%
 src/test_altcase.py               13      0   100%
+src/test_autocomplete.py          16      8    50%   9, 84-91
 src/test_convert.py                5      0   100%
 src/test_disemvowel.py             6      0   100%
 src/test_even_odd.py               5      0   100%
 src/test_fatcat.py                13      0   100%
+src/test_forbes.py                15      0   100%
 src/test_grade.py                 24      0   100%
 src/test_jenny.py                  5      0   100%
 src/test_minmax.py                22      0   100%
@@ -263,20 +278,23 @@ src/test_reverse.py                6      0   100%
 src/test_sort.py                  15      5    67%   28-32
 src/test_sortlength.py            15      0   100%
 src/test_string2num.py            10      0   100%
+src/test_string_pyramid.py         0      0   100%
 src/test_sum_highlow.py           14      0   100%
 src/test_sum_of_nth_terms.py      12      0   100%
 src/test_sum_positive.py           5      0   100%
 ------------------------------------------------------------
-TOTAL                            408     15    96%
+TOTAL                            461     23    95%
 
 ---------- coverage: platform darwin, python 3.5.2-final-0 -----------
 Name                           Stmts   Miss  Cover   Missing
 ------------------------------------------------------------
 src/alt_case.py                    2      0   100%
+src/autocomplete.py                7      0   100%
 src/convert.py                     3      0   100%
 src/disemvowel.py                  3      0   100%
 src/even_odd.py                    4      0   100%
 src/fatcat.py                      2      0   100%
+src/forbes.py                     19      0   100%
 src/get_grade.py                  11      0   100%
 src/jenny.py                       4      0   100%
 src/minmax.py                      8      0   100%
@@ -286,17 +304,20 @@ src/parenthetics.py               45      3    93%   39, 68, 70
 src/return_negative.py             2      0   100%
 src/reverse.py                     2      0   100%
 src/sort_bylength.py               2      0   100%
-src/sort_cards.py                  7      0   100%
+src/sort_cards.py                  3      0   100%
 src/string2num.py                  2      0   100%
+src/string_pyramid.py              0      0   100%
 src/sum_highlow.py                 4      0   100%
 src/sum_of_nth_terms.py            5      0   100%
 src/sum_positive.py                4      0   100%
 src/test_altcase.py               13      0   100%
+src/test_autocomplete.py          16      8    50%   9, 84-91
 src/test_convert.py                5      0   100%
 src/test_disemvowel.py             6      0   100%
 src/test_even_odd.py               5      0   100%
 src/test_fatcat.py                13      0   100%
-src/test_grade.py                 24      1    96%   48
+src/test_forbes.py                15      0   100%
+src/test_grade.py                 24      0   100%
 src/test_jenny.py                  5      0   100%
 src/test_minmax.py                22      0   100%
 src/test_monkey.py                11      0   100%
@@ -307,11 +328,12 @@ src/test_reverse.py                6      0   100%
 src/test_sort.py                  15      5    67%   28-32
 src/test_sortlength.py            15      0   100%
 src/test_string2num.py            10      0   100%
+src/test_string_pyramid.py         0      0   100%
 src/test_sum_highlow.py           14      0   100%
 src/test_sum_of_nth_terms.py      12      0   100%
 src/test_sum_positive.py           5      0   100%
 ------------------------------------------------------------
-TOTAL                            408     16    96%
+TOTAL                            461     23    95%
 
 
 ========================================================================= 171 passed in 6.06 seconds ==========================================================================
