@@ -117,47 +117,34 @@ class Graph():
         return checked
 
     def dijkstra(self, start, finish):
-        """Return the shortest path between two nodes.
-        Return the path and the number of steps taken to follow that path."""
+        """Return the shortest path between two nodes."""
+        visited = {start: 0}
+        path = {}
+        unvisited_nodes = self.nodes()
+        while unvisited_nodes:
+            min_node = None
+            for node in unvisited_nodes:
+                if node in visited:
+                    if min_node is None:
+                        min_node = node
+                    elif visited[node] < visited[min_node]:
+                        min_node = node
+            if min_node is None:
+                break
 
-        unvisited = self.depth_traversal(start)
-        distances = {i: [None, [None]] for i in unvisited}
-        distances[start] = [0, [start]]
-        current_node = start
+            unvisited_nodes.remove(min_node)
+            current_weight = visited[min_node]
 
-        if start not in unvisited:
-            raise KeyError("The start node is not in the graph.")
-        elif finish not in unvisited:
-            raise ValueError("The finish node is not in the graph.")
+            for edge in self.graph[min_node]:
+                weight = current_weight + self.graph[min_node][edge]
+                if edge not in visited or weight < visited[edge]:
+                    visited[edge] = weight
+                    path[edge] = min_node
 
-        while unvisited:
-            for item in self.neighbors(current_node):
-                study_node = item
-                current_node_distance = distances[current_node][0]
-                potential_distance = self.neighbors(current_node)[study_node]
-                original_distance = distances[study_node][0]
-
-                if study_node not in unvisited:
-                    continue
-                elif original_distance is None or potential_distance < original_distance:
-                    current_node_path = (distances[current_node])[1][:]
-                    current_node_path.append(study_node)
-                    distances[study_node][0] = potential_distance + current_node_distance
-                    distances[study_node][1] = current_node_path
-                    continue
-
-            if current_node == finish:
-                return distances[finish]
-
-            unvisited.remove(current_node)
-            next_node = None
-            for key, value in distances.items():
-                # import pdb; pdb.set_trace()
-                if key in unvisited:
-                    if next_node is None:
-                        next_node = key
-                        continue
-                    elif distances[key][0]:
-                        if distances[key][0] < distances[next_node][0]:
-                            next_node = key
-            current_node = next_node
+            if min_node == finish:
+                path_node = finish
+                journey = [finish]
+                while path_node != start:
+                    journey.append(path[path_node])
+                    path_node = path[path_node]
+                return {visited[finish]: journey[::-1]}
