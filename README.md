@@ -214,7 +214,8 @@ def sort_cards(cards):
 Module Name: autocomplete.py
 Test Module Name: test_autocomplete.py
 Link: https://www.codewars.com/kata/5389864ec72ce03383000484
-Best Solution:
+I originally wrote this as a code wars kata solution, but later updated it in favor of a Trie Tree implementation.
+Best Solution from Code Wars:
 ```python
 This was the solution by: s-lugo
 def autocomplete(input_, dictionary):
