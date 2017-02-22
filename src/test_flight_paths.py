@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 """Test flight_paths.py module."""
 
 import pytest
@@ -5,6 +6,17 @@ import os
 import sys
 
 from flight_paths import get_json, lat_long_dict, create_graph, flight_path
+
+
+# ------------------------------- FIXTURES ------------------------------------
+
+
+@pytest.fixture()
+def test_graph():
+    return create_graph()
+
+
+# -------------------------------- PARAMS -------------------------------------
 
 
 LAT_LONG_PARAMS = [
@@ -25,10 +37,46 @@ LAT_LONG_PARAMS = [
     ['Dallas/Fort Worth', [32.89694, -97.03806]],
 ]
 
+FLIGHT_PATH_PARAMS = [
+    ['London', 'Paris', {470.06413953452864: ['London', 'Exeter', 'Paris']}],
+    ['London', 'Hahaya', (['London',
+                           'Nairobi',
+                           'Hahaya'],
+     'There is a path between those cities, but the distance is unknown.')],
+    ['New York City', 'Kos Island', {
+        5112.252879671617: ['New York City', 'Milan', 'Kos Island']}],
+    ['Hassi Messaoud', 'Paris', {
+        1235.1042521161985: ['Hassi Messaoud', 'Annaba', 'Paris']}],
+    ['Dar es Salaam', 'Dallas/Fort Worth', {
+        9160.494226190103: ['Dar es Salaam',
+                            'Nairobi',
+                            'Casablanca',
+                            'New York City',
+                            'Dallas/Fort Worth']}],
+    ['Rome', 'Moscow', {1495.0349452221933: ['Rome', 'Vienna', 'Moscow']}],
+    ['Chicago', 'Paris', {
+        4158.941151780698: ['Chicago', 'Dublin', 'Southampton', 'Paris']}],
+    ['Goma', 'Addis Ababa', {987.2177050944146: ['Goma', 'Addis Ababa']}],
+    ['Kinshasa', 'Auckland', {
+        9916.959418829556: ['Kinshasa',
+                            'Kempton Park',
+                            'Sydney',
+                            'Auckland']}],
+    ['Suva', 'Honolulu', {3249.2008817450755: ['Suva', 'Nadi', 'Honolulu']}],
+    ['Ferry Reach', 'Victoria Falls', {
+        8867.686457044867: ['Ferry Reach',
+                            'New York City',
+                            'Accra',
+                            u'São Tomé',
+                            'Luanda',
+                            'Windhoek',
+                            'Victoria Falls']}],
+    ['Trapani', 'Puebla', {
+        6723.668206383211: ['Trapani', 'Rome', 'Boston', 'Houston', 'Puebla']}]
 
-@pytest.fixture()
-def test_graph():
-    return create_graph()
+]
+
+# -------------------------------- TESTS --------------------------------------
 
 
 def test_get_json():
@@ -36,7 +84,8 @@ def test_get_json():
     flight_data = get_json('/Users/rachaelwisecarver/codefellows/401/wk1/day5/snowday/code-katas/flight_data.json')
     assert flight_data[0]['airport'] == 'Goma International Airport'
     assert flight_data[0]['city'] == 'Goma'
-    assert flight_data[0]['destination_cities'] == ['Kinshasa', 'Kisangani', 'Addis Ababa']
+    assert flight_data[0]['destination_cities'] == [
+        'Kinshasa', 'Kisangani', 'Addis Ababa']
     assert len(flight_data) == 741
 
 
@@ -59,15 +108,10 @@ def test_create_graph_creates_graph(test_graph):
     assert test_graph.graph['London']['New York City'] == 3459.5239201665863
 
 
-def test_flight_path_base_cases():
+@pytest.mark.parametrize('n, m, result', FLIGHT_PATH_PARAMS)
+def test_flight_path_base_cases(n, m, result):
     """Test that flight_path returns path, distance between two cities."""
-    if sys.version_info[0] == 2:
-        assert flight_path('San Francisco', 'Rome') == [
-            6429.356344926646, ['San Francisco', u'Victoria', u'Vancouver', u'Rome']]
-    else:
-        assert flight_path('San Francisco', 'Rome') == [
-            6429.356344926646, ['San Francisco', 'Victoria', 'Vancouver', 'Rome']]
-    assert flight_path('London', 'Nantes') == 'There is a direct flight from London to Nantes, at 336.942561456 miles.'
+    assert flight_path(n, m) == result
 
 
 def test_flight_path_start_not_in_dict():
@@ -84,7 +128,7 @@ def test_flight_path_no_connection_to_destination():
 
 def test_flight_path_dest_has_no_lat_or_long():
     """Test for when a destination city has no lat or long."""
-    if sys.version_info[0] == 2:
-        assert flight_path('Plaine Magnien', 'Hahaya') == "[106363.31814988135, ['Plaine Magnien', u'Dubai', u'Hargeisa', u'Addis Ababa', u'Mombasa', u'Zanzibar', u'Dar es Salaam', u'Hai District', u'Nairobi', u'Hahaya']]. Caution: the distance of this path may be inaccurate due to lack of location data on one or more city."
-    else:
-        assert flight_path('Plaine Magnien', 'Hahaya') == "[106363.31814988135, ['Plaine Magnien', 'Dubai', 'Hargeisa', 'Addis Ababa', 'Mombasa', 'Zanzibar', 'Dar es Salaam', 'Hai District', 'Nairobi', 'Hahaya']]. Caution: the distance of this path may be inaccurate due to lack of location data on one or more city."
+    assert flight_path('Plaine Magnien', 'Hahaya') == (
+        ['Plaine Magnien', 'Antananarivo', 'Hahaya'],
+        'There is a path between those cities, but the distance is unknown.'
+        )

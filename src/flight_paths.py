@@ -1,3 +1,4 @@
+# -*- coding: UTF-8 -*-
 """A function that, given a starting city and destination city, returns:
 1. A path between the cities, and
 2. The distance from one city to the next.
@@ -82,7 +83,7 @@ def flight_path(start, dest):
         raise ValueError("There is no connection between those cities.")
     else:
         path = connections.dijkstra(start, dest)
-        if path.keys() > 500000:
-            return "There is a path between those cities, but the distance is unknown."
+        if path.keys()[0] > 500000:
+            return path[path.keys()[0]], "There is a path between those cities, but the distance is unknown."
         else:
             return path
