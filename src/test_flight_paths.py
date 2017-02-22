@@ -81,7 +81,7 @@ FLIGHT_PATH_PARAMS = [
 
 def test_get_json():
     """Test that get_json retrieves the correct file and opens as json."""
-    flight_data = get_json('/Users/rachaelwisecarver/codefellows/401/wk1/day5/snowday/code-katas/flight_data.json')
+    flight_data = get_json()
     assert flight_data[0]['airport'] == 'Goma International Airport'
     assert flight_data[0]['city'] == 'Goma'
     assert flight_data[0]['destination_cities'] == [

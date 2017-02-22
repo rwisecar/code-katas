@@ -8,9 +8,13 @@ import os
 from flight_graph import Graph
 
 
-def get_json(fpath):
+# Route to JSON data file
+FPATH = '/Users/rachaelwisecarver/codefellows/401/wk1/day5/snowday/code-katas/flight_data.json'
+
+
+def get_json():
     """Get json data from file."""
-    with open(fpath, 'r') as f:
+    with open(FPATH, 'r') as f:
         flight_data = json.load(f)
     return flight_data
 
@@ -44,7 +48,7 @@ def calculate_distance(point1, point2):
 
 def lat_long_dict():
     """Find each city's latitude and longitude and save in a dictionary."""
-    flight_data = get_json('/Users/rachaelwisecarver/codefellows/401/wk1/day5/snowday/code-katas/flight_data.json')
+    flight_data = get_json()
     lat_long = {}
     for item in flight_data:
         lat_long[item['city']] = item['lat_lon']
@@ -58,7 +62,7 @@ def create_graph():
     up, but the route will not be favored when calculating the shortest flight
     path.
     """
-    flight_data = get_json('/Users/rachaelwisecarver/codefellows/401/wk1/day5/snowday/code-katas/flight_data.json')
+    flight_data = get_json()
     lat_long = lat_long_dict()
     connections = Graph()
     for item in flight_data:
