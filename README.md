@@ -309,7 +309,7 @@ src/reverse.py                     2      0   100%
 src/sort_bylength.py               2      0   100%
 src/sort_cards.py                  3      0   100%
 src/string2num.py                  2      0   100%
-src/string_pyramid.py              0      0   100%
+src/string_pyramid.py             39      0   100%
 src/sum_highlow.py                 4      0   100%
 src/sum_of_nth_terms.py            5      0   100%
 src/sum_positive.py                4      0   100%
@@ -321,7 +321,7 @@ src/test_even_odd.py               5      0   100%
 src/test_fatcat.py                13      0   100%
 src/test_flight_paths.py          31      0   100%
 src/test_forbes.py                 9      0   100%
-src/test_grade.py                 24      0   100%
+src/test_grade.py                 24      1    96%   48
 src/test_jenny.py                  5      0   100%
 src/test_minmax.py                22      0   100%
 src/test_monkey.py                11      0   100%
@@ -332,13 +332,13 @@ src/test_reverse.py                6      0   100%
 src/test_sort.py                  15      5    67%   28-32
 src/test_sortlength.py            15      0   100%
 src/test_string2num.py            10      0   100%
-src/test_string_pyramid.py         0      0   100%
+src/test_string_pyramid.py        61      0   100%
 src/test_sum_highlow.py           14      0   100%
 src/test_sum_of_nth_terms.py      12      0   100%
 src/test_sum_positive.py           5      0   100%
 src/trietree.py                   75     48    36%   51-63, 67, 71-91, 95-104, 107-113
 ------------------------------------------------------------
-TOTAL                            742     99    87%
+TOTAL                            842    100    88%
 
 
 ---------- coverage: platform darwin, python 3.6.0-final-0 -----------
@@ -364,7 +364,7 @@ src/reverse.py                     2      0   100%
 src/sort_bylength.py               2      0   100%
 src/sort_cards.py                  3      0   100%
 src/string2num.py                  2      0   100%
-src/string_pyramid.py              0      0   100%
+src/string_pyramid.py             39      0   100%
 src/sum_highlow.py                 4      0   100%
 src/sum_of_nth_terms.py            5      0   100%
 src/sum_positive.py                4      0   100%
@@ -376,7 +376,7 @@ src/test_even_odd.py               5      0   100%
 src/test_fatcat.py                13      0   100%
 src/test_flight_paths.py          31      0   100%
 src/test_forbes.py                 9      0   100%
-src/test_grade.py                 24      0   100%
+src/test_grade.py                 24      1    96%   50
 src/test_jenny.py                  5      0   100%
 src/test_minmax.py                22      0   100%
 src/test_monkey.py                11      0   100%
@@ -387,12 +387,12 @@ src/test_reverse.py                6      0   100%
 src/test_sort.py                  15      5    67%   28-32
 src/test_sortlength.py            15      0   100%
 src/test_string2num.py            10      0   100%
-src/test_string_pyramid.py         0      0   100%
+src/test_string_pyramid.py        61      0   100%
 src/test_sum_highlow.py           14      0   100%
 src/test_sum_of_nth_terms.py      12      0   100%
 src/test_sum_positive.py           5      0   100%
 src/trietree.py                   75     48    36%   51-63, 67, 71-91, 95-104, 107-113
 ------------------------------------------------------------
-TOTAL                            742     99    87%
+TOTAL                            842    100    88%
 
 ```

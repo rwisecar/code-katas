@@ -21,11 +21,13 @@ def watch_pyramid_from_above(characters):
     """Show view of pyramid from the top."""
     if characters:
         pyramid = []
-        for i in range(len(characters)):
-            pyramid.append(characters[:i] + characters[i] * len(characters[i:]))
-        for i in range(len(characters)):
+        length = len(characters)
+        for i in range(length):
+            pyramid.append(
+                characters[:i] + characters[i] * len(characters[i:]))
+        for i in range(length):
             pyramid[i] += pyramid[i][-2::-1]
-        for i in range(len(characters) - 2, -1, -1):
+        for i in range(length - 2, -1, -1):
             pyramid.append(pyramid[i])
         return "\n".join(pyramid)
     return characters
