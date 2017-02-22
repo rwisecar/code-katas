@@ -87,7 +87,8 @@ def flight_path(start, dest):
         raise ValueError("There is no connection between those cities.")
     else:
         path = connections.dijkstra(start, dest)
-        if path.keys()[0] > 500000:
-            return path[path.keys()[0]], "There is a path between those cities, but the distance is unknown."
+        key = list(path.keys())[0]
+        if key > 500000:
+            return path[key], "There is a path between those cities, but the distance is unknown."
         else:
             return path
