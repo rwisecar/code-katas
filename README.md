@@ -222,6 +222,16 @@ def autocomplete(input_, dictionary):
     return [ x for x in dictionary if x.lower().startswith(input_.lower()) ][:5]
 ```
 
+## Problem 20: Forbes List
+Module Name: forbes.py
+Test Module Name: test_forbes.py
+Problem Link: https://codefellows.github.io/sea-python-401d5/assignments/kata_forbes_billionaires.html
+Task: Without using a sorting method, write a function that returns the name, net worth, and industry of:
+1. the oldest billionaire under 80 years old, and
+2. the youngest billionaire with a valid age.
+
+"""
+
 ## Problem 20: Flight Paths
 Module Name: flight_paths.py
 Test Module Name: test_flight_paths.py
@@ -242,6 +252,7 @@ src/even_odd.py                    4      0   100%
 src/fatcat.py                      2      0   100%
 src/flight_graph.py               95     33    65%   34, 55-58, 62-67, 71-76, 80, 84-86, 90-94, 110-117, 133
 src/flight_paths.py               50      1    98%   85
+src/forbes.py                     19      0   100%
 src/get_grade.py                  11      0   100%
 src/jenny.py                       4      0   100%
 src/minmax.py                      8      0   100%
@@ -264,6 +275,7 @@ src/test_disemvowel.py             6      0   100%
 src/test_even_odd.py               5      0   100%
 src/test_fatcat.py                13      0   100%
 src/test_flight_paths.py          31      0   100%
+src/test_forbes.py                15      0   100%
 src/test_grade.py                 24      0   100%
 src/test_jenny.py                  5      0   100%
 src/test_minmax.py                22      0   100%
@@ -283,7 +295,6 @@ src/test_sum_positive.py           5      0   100%
 TOTAL                            603     57    91%
 
 
-
 ---------- coverage: platform darwin, python 3.6.0-final-0 -----------
 Name                           Stmts   Miss  Cover   Missing
 ------------------------------------------------------------
@@ -295,6 +306,7 @@ src/even_odd.py                    4      0   100%
 src/fatcat.py                      2      0   100%
 src/flight_graph.py               95     33    65%   34, 55-58, 62-67, 71-76, 80, 84-86, 90-94, 110-117, 133
 src/flight_paths.py               50      1    98%   85
+src/forbes.py                     19      0   100%
 src/get_grade.py                  11      0   100%
 src/jenny.py                       4      0   100%
 src/minmax.py                      8      0   100%
@@ -317,6 +329,7 @@ src/test_disemvowel.py             6      0   100%
 src/test_even_odd.py               5      0   100%
 src/test_fatcat.py                13      0   100%
 src/test_flight_paths.py          31      0   100%
+src/test_forbes.py                15      0   100%
 src/test_grade.py                 24      0   100%
 src/test_jenny.py                  5      0   100%
 src/test_minmax.py                22      0   100%
