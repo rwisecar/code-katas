@@ -231,13 +231,57 @@ Task: Without using a sorting method, write a function that returns the name, ne
 1. the oldest billionaire under 80 years old, and
 2. the youngest billionaire with a valid age.
 
-"""
 
-## Problem 20: Flight Paths
+## Problem 21: Flight Paths
 Module Name: flight_paths.py
 Test Module Name: test_flight_paths.py
 Data URL: [data](https://codefellows.github.io/sea-python-401d5/_downloads/cities_with_airports.json)
 Helper Algorithm Module Name: flight_graph.py
+
+## Problem 22: String Pyramid
+Module Name: string_pyramid.py
+Test Module Name: test_string_pyramid.py
+Link: http://www.codewars.com/kata/string-pyramid
+Best Solution from Code Wars:
+```python
+This was the solution by zebulan: 
+
+def watch_pyramid_from_the_side(characters):
+    if not characters:
+        return characters
+    width = 2 * len(characters) - 1
+    output = '{{:^{}}}'.format(width).format
+    return '\n'.join(output(char * dex) for char, dex in
+                     zip(reversed(characters), xrange(1, width + 1, 2)))
+
+
+def watch_pyramid_from_above(characters):
+    if not characters:
+        return characters
+    width = 2 * len(characters) - 1
+    dex = width - 1
+    result = []
+    for a in xrange(width):
+        row = []
+        for b in xrange(width):
+            minimum, maximum = sorted((a, b))
+            row.append(characters[min(abs(dex - maximum), abs(0 - minimum))])
+        result.append(''.join(row))
+    return '\n'.join(result)
+
+
+def count_visible_characters_of_the_pyramid(characters):
+    if not characters:
+        return -1
+    return (2 * len(characters) - 1) ** 2
+
+
+def count_all_characters_of_the_pyramid(characters):
+    if not characters:
+        return -1
+    return sum(a ** 2 for a in xrange(1, 2 * len(characters), 2))
+
+```
 
 #*Test Coverage*
 
