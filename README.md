@@ -246,14 +246,14 @@ Helper Algorithm Module Name: flight_graph.py
 Name                           Stmts   Miss  Cover   Missing
 ------------------------------------------------------------
 src/alt_case.py                    2      0   100%
-src/autocomplete.py                7      0   100%
+src/autocomplete.py               29      2    93%   46, 52
 src/convert.py                     3      0   100%
 src/disemvowel.py                  3      0   100%
 src/even_odd.py                    4      0   100%
 src/fatcat.py                      2      0   100%
 src/flight_graph.py               95     33    65%   34, 55-58, 62-67, 71-76, 80, 84-86, 90-94, 110-117, 133
 src/flight_paths.py               50      1    98%   85
-src/forbes.py                     19      0   100%
+src/forbes.py                     17      0   100%
 src/get_grade.py                  11      0   100%
 src/jenny.py                       4      0   100%
 src/minmax.py                      8      0   100%
@@ -270,13 +270,13 @@ src/sum_highlow.py                 4      0   100%
 src/sum_of_nth_terms.py            5      0   100%
 src/sum_positive.py                4      0   100%
 src/test_altcase.py               13      0   100%
-src/test_autocomplete.py          16      8    50%   9, 84-91
+src/test_autocomplete.py          32      0   100%
 src/test_convert.py                5      0   100%
 src/test_disemvowel.py             6      0   100%
 src/test_even_odd.py               5      0   100%
 src/test_fatcat.py                13      0   100%
 src/test_flight_paths.py          31      0   100%
-src/test_forbes.py                15      0   100%
+src/test_forbes.py                 9      0   100%
 src/test_grade.py                 24      0   100%
 src/test_jenny.py                  5      0   100%
 src/test_minmax.py                22      0   100%
@@ -292,22 +292,23 @@ src/test_string_pyramid.py         0      0   100%
 src/test_sum_highlow.py           14      0   100%
 src/test_sum_of_nth_terms.py      12      0   100%
 src/test_sum_positive.py           5      0   100%
+src/trietree.py                   75     48    36%   51-63, 67, 71-91, 95-104, 107-113
 ------------------------------------------------------------
-TOTAL                            603     57    91%
+TOTAL                            742     99    87%
 
 
 ---------- coverage: platform darwin, python 3.6.0-final-0 -----------
 Name                           Stmts   Miss  Cover   Missing
 ------------------------------------------------------------
 src/alt_case.py                    2      0   100%
-src/autocomplete.py                7      0   100%
+src/autocomplete.py               29      2    93%   46, 52
 src/convert.py                     3      0   100%
 src/disemvowel.py                  3      0   100%
 src/even_odd.py                    4      0   100%
 src/fatcat.py                      2      0   100%
 src/flight_graph.py               95     33    65%   34, 55-58, 62-67, 71-76, 80, 84-86, 90-94, 110-117, 133
 src/flight_paths.py               50      1    98%   85
-src/forbes.py                     19      0   100%
+src/forbes.py                     17      0   100%
 src/get_grade.py                  11      0   100%
 src/jenny.py                       4      0   100%
 src/minmax.py                      8      0   100%
@@ -324,13 +325,13 @@ src/sum_highlow.py                 4      0   100%
 src/sum_of_nth_terms.py            5      0   100%
 src/sum_positive.py                4      0   100%
 src/test_altcase.py               13      0   100%
-src/test_autocomplete.py          16      8    50%   9, 84-91
+src/test_autocomplete.py          32      0   100%
 src/test_convert.py                5      0   100%
 src/test_disemvowel.py             6      0   100%
 src/test_even_odd.py               5      0   100%
 src/test_fatcat.py                13      0   100%
 src/test_flight_paths.py          31      0   100%
-src/test_forbes.py                15      0   100%
+src/test_forbes.py                 9      0   100%
 src/test_grade.py                 24      0   100%
 src/test_jenny.py                  5      0   100%
 src/test_minmax.py                22      0   100%
@@ -346,7 +347,8 @@ src/test_string_pyramid.py         0      0   100%
 src/test_sum_highlow.py           14      0   100%
 src/test_sum_of_nth_terms.py      12      0   100%
 src/test_sum_positive.py           5      0   100%
+src/trietree.py                   75     48    36%   51-63, 67, 71-91, 95-104, 107-113
 ------------------------------------------------------------
-TOTAL                            603     57    91%
+TOTAL                            742     99    87%
 
 ```
