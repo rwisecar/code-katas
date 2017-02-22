@@ -4,16 +4,6 @@ Account for dictionary order and capitalization."""
 from trietree import Trie
 
 
-# def autocomplete(input_, dictionary):
-#     """Code Wars kata autocomplete solution."""
-#     return_arr = []
-#     input_ = "".join([i for i in list(input_) if i.isalpha()])
-#     for d in dictionary:
-#         if d.lower().startswith(input_.lower()):
-#             return_arr.append(d)
-#     return return_arr[:5]
-
-
 class Autocomplete(object):
     """
     Class based Autocomplete per class instructions.

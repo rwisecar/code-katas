@@ -1,22 +1,17 @@
 """Test for autocomplete module, taken from Code Wars website."""
 
 import pytest
-from autocomplete import autocomplete
+from autocomplete import Autocomplete
 
 
-def solution(input_, dictionary):
-    """Solution taken from code wars for testing purposes."""
-    return lambda input_, dictionary: [
-        item for item in dictionary if item.lower().startswith(
-            "".join([l for l in input_ if l.isalpha()]).lower())][:5]
+short_dictionary = ['fix', 'fax', 'fit', 'fist', 'full', 'finch', 'final', 'finial']
 
-
-dictionaryNoGuess = ['airplane',  'apple', 'air', 'avenue', 'airport',
+long_dictionary = ['airplane',  'apple', 'air', 'avenue', 'airport',
                      'adamantium', 'awkwardness', 'awesome', 'amazing',
                      'ball', 'book', 'bike', 'bill', 'billiard', 'bell',
                      'bowl', 'Blastoise', 'beautiful', 'car', 'cookie', 'coup',
                      'candle', 'change', 'champion', 'call', 'camel',
-                     'Charizard', 'catastrophic', 'cat', 'dog', 'down',
+                     'charizard', 'catastrophic', 'cat', 'dog', 'down',
                      'dirigible', 'dare', 'doll', 'decode', 'digit',
                      'download', 'digital', 'dollar', 'decompose',
                      'declaration', 'dream', 'eat', 'excellent', 'elephant',
@@ -25,8 +20,8 @@ dictionaryNoGuess = ['airplane',  'apple', 'air', 'avenue', 'airport',
                      'floral', 'float', 'fight', 'finish', 'finally', 'figure',
                      'gold', 'ghost', 'grate', 'grapes', 'giant', 'godzilla',
                      'gigantic', 'gigabyte', 'gremlin', 'gravel', 'game',
-                     'Gyarados', 'howl', 'house', 'hot', 'hidden', 'heat',
-                     'Hyrule', 'heart', 'health', 'hammer', 'harmony', 'igloo',
+                     'gyarados', 'howl', 'house', 'hot', 'hidden', 'heat',
+                     'hyrule', 'heart', 'health', 'hammer', 'harmony', 'igloo',
                      'inn', 'inside', 'inverted', 'infection', 'imagine',
                      'imagination', 'image', 'internal', 'impressive',
                      'inconceivable', 'jump', 'jumping', 'judge', 'judging',
@@ -55,37 +50,156 @@ dictionaryNoGuess = ['airplane',  'apple', 'air', 'avenue', 'airport',
                      'violin', 'viola', 'vibrant', 'video playback', 'velcro',
                      'velvet', 'window', 'win', 'wedding', 'wet', 'where',
                      'wild', 'well', 'welcome', 'wonderful', 'xylophone',
-                     'x-ray', 'X-Men', 'Xavier', 'xenon', 'xerox', 'Xerneas',
-                     'Yaphi', 'you', 'yourself', 'your', 'yonder', 'yodel',
-                     'yammer', 'Yveltal', 'Zelda', 'Zygarde', 'zebra', 'zero',
-                     'Zeus', 'zap cannon', 'zephyr', 'zig-zag']
+                     'x-ray', 'x-Men', 'xavier', 'xenon', 'xerox', 'Xerneas',
+                     'yaphi', 'you', 'yourself', 'your', 'yonder', 'yodel',
+                     'yammer', 'yveltal', 'zelda', 'zygarde', 'zebra', 'zero',
+                     'zeus', 'zap cannon', 'zephyr', 'zig-zag']
 
 
-BASIC_TEST_PARAMS = [
-        ['ai', ['airplane', 'air', 'airport']],
-        ['z', ['Zelda', 'Zygarde', 'zebra', 'zero', 'Zeus']],
-        ['t', ['tyrant', 'tiger', 'tired', 'tied', 'trick']],
-        ['nothinghere', []],
-        ['yaph', ['Yaphi']],
-        ['nope', ['nope']],
-        ['n~!@#$%^&*()_+1234567890ope', ['nope']],
-        ['""', ['airplane', 'apple', 'air', 'avenue', 'airport']]
+SHORT_DICT_PARAMS = [
+    ['f', ['fix', 'fit', 'fist', 'finch', 'final']],
+    ['fi', ['fix', 'fit', 'fist', 'finch', 'final']],
+    ['fa', ['fax']],
+    ['fu', ['full']],
+    ['fin', ['finch', 'final', 'finial']],
+    ['g', None],
+    [' ', None]
+]
+
+SHORT_DICT_BIG_MAX_PARAMS = [
+    ['f', ['fix', 'fit', 'fist', 'finch', 'final', 'finial', 'fax']],
+    ['fi', ['fix', 'fit', 'fist', 'finch', 'final', 'finial']],
+    ['fa', ['fax']],
+    ['fu', ['full']],
+    ['fin', ['finch', 'final', 'finial']],
+    ['g', None],
+    [' ', None]
 ]
 
 
-@pytest.mark.parametrize("input, result", BASIC_TEST_PARAMS)
-def test_ai(input, result):
-    """Test that input_ 'ai' returns correct words."""
-    assert autocomplete(input, dictionaryNoGuess) == result
+LONG_DICT_PARAMS = [
+    ['j', ['jump', 'jumping', 'judge', 'judging', 'juggle']],
+    ['ji', ['jiggle']],
+    ['i', ['igloo', 'inn', 'inside', 'inverted', 'infection']],
+    ['in', ['inn', 'inside', 'inverted', 'infection', 'internal']],
+    ['r', ['royal', 'roll', 'rolling', 'ruler', 'regal']],
+    ['ro', ['royal', 'roll', 'rolling']],
+    ['rol', ['roll', 'rolling']],
+    ['x', ['xylophone', 'x-ray', 'x-men', 'xavier', 'xenon']],
+    ['z', ['zelda', 'zebra', 'zero', 'zeus', 'zephyr']],
+    ['q', ['queen', 'quest', 'question', 'quesadilla', 'query']],
+    ['que', ['queen', 'quest', 'question', 'quesadilla', 'query']],
+    ['qui', ['quick', 'quickly', 'quintuplets']],
+    ['b', ['ball', 'book', 'bowl', 'bike', 'bill']],
+    ['bi', ['bike', 'bill', 'billiard']],
+    ['bil', ['bill', 'billiard']]
+]
 
 
-def random_tests():
-    """Test that input_ with random values returns correct sets."""
-    from random import randint
-    prev = ['','^','$','_',' ','-','#','','','','','','','','','','','','']
-    base = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-    foll = ['','i','','a','','o','','u','','e','$','^','*','#','@','','','','','','','','','','','','','']
+LONG_DICT_BIG_MAX_PARAMS = [
+    ['j', ['jump', 'jumping', 'judge', 'judging', 'juggle', 'juggler',
+     'juggling']],
+    ['ji', ['jiggle']],
+    ['i', ['igloo', 'inn', 'inside', 'inverted', 'infection', 'internal',
+     'inconceivable']],
+    ['in', ['inn', 'inside', 'inverted', 'infection', 'internal',
+     'inconceivable']],
+    ['r', ['royal', 'roll', 'rolling', 'ruler', 'regal', 'regular',
+     'regulate']],
+    ['ro', ['royal', 'roll', 'rolling']],
+    ['rol', ['roll', 'rolling']],
+    ['x', ['xylophone', 'x-ray', 'x-men', 'xavier', 'xenon', 'xerox',
+     'xerneas']],
+    ['z', ['zelda', 'zebra', 'zero', 'zeus', 'zephyr', 'zygarde',
+     'zap cannon']],
+    ['q', ['queen', 'quest', 'question', 'quesadilla', 'query', 'quick',
+     'quickly']],
+    ['que', ['queen', 'quest', 'question', 'quesadilla', 'query']],
+    ['qui', ['quick', 'quickly', 'quintuplets']],
+    ['b', ['ball', 'book', 'bowl', 'bike', 'bill', 'billiard', 'bell']],
+    ['bi', ['bike', 'bill', 'billiard']],
+    ['bil', ['bill', 'billiard']]
+]
 
-    for _ in xrange(40):
-        i = "".join([prev[randint(0,len(prev)-1)]]+[base[randint(0,len(base)-1)]]+[foll[randint(0,len(foll)-1)]])
-        assert autocomplete(i, dictionaryNoGuess) == solution(i, dictionaryNoGuess)
+LONG_DICT_VERY_BIG_PARAMS = [
+    ['a', ['airplane', 'airport', 'air', 'apple', 'avenue', 'adamantium',
+     'awkwardness', 'awesome', 'amazing']],
+    ['e', ['eat', 'ear', 'eagle', 'easy', 'excellent', 'elephant', 'elevator',
+     'electronic', 'electron', 'elegant', 'eye', 'evil']],
+    ['p', ['pinch', 'pig', 'pigeon', 'pallet', 'paint', 'portrait', 'pork',
+     'photograph', 'photo']],
+]
+
+# ----------------------------------FIXTURES-----------------------------------
+
+
+@pytest.fixture
+def short_dict_trie():
+    """A trie filled with words from the short dictionary."""
+    return Autocomplete(short_dictionary)
+
+
+@pytest.fixture
+def short_dict_big_max():
+    """A trie filled with words from the short dictionary, max_compl = 7."""
+    return Autocomplete(short_dictionary, max_completions=7)
+
+
+@pytest.fixture
+def long_dict_trie():
+    """A trie filled with words from the short dictionary."""
+    return Autocomplete(long_dictionary)
+
+
+@pytest.fixture
+def long_dict_big_max():
+    """A trie filled with words from the short dictionary, max_compl = 7."""
+    return Autocomplete(long_dictionary, max_completions=7)
+
+
+@pytest.fixture
+def long_dict_very_big_max():
+    """A trie filled with words from the short dictionary, max_compl = 7."""
+    return Autocomplete(long_dictionary, max_completions=15)
+
+
+# -----------------------------SHORT DICTIONARY TESTS--------------------------
+
+
+@pytest.mark.parametrize("n, result", SHORT_DICT_PARAMS)
+def test_basic_use_cases_short_dictionary(n, result, short_dict_trie):
+    """Test the basic use cases for the short dictionary."""
+    assert short_dict_trie.autocomplete(n) == result
+
+
+@pytest.mark.parametrize("n, result", SHORT_DICT_BIG_MAX_PARAMS)
+def test_basic_use_cases_short_dict_big_max(n, result, short_dict_big_max):
+    """Test basic use cases for short dictionary with long max_completions."""
+    assert short_dict_big_max.autocomplete(n) == result
+
+
+def test_error_if_not_string():
+    """Test that you get a TypeError if you try to input a nonstring."""
+    with pytest.raises(TypeError):
+        Breakit = Autocomplete([1, 2, 3])
+
+
+# ------------------------------LONG DICTIONARY TESTS--------------------------
+
+
+@pytest.mark.parametrize("n, result", LONG_DICT_PARAMS)
+def test_basic_use_cases_long_dictionary(n, result, long_dict_trie):
+    """Test the basic use cases for the long dictionary."""
+    assert long_dict_trie.autocomplete(n) == result
+
+
+@pytest.mark.parametrize("n, result", LONG_DICT_BIG_MAX_PARAMS)
+def test_basic_use_cases_long_dict_big_max(n, result, long_dict_big_max):
+    """Test basic use cases for long dictionary with longer max_completions."""
+    assert long_dict_big_max.autocomplete(n) == result
+
+
+@pytest.mark.parametrize("n, result", LONG_DICT_VERY_BIG_PARAMS)
+def test_very_long_max_completions(n, result, long_dict_very_big_max):
+    """Test basic use cases for long dictionary w longest max_completions."""
+    assert long_dict_very_big_max.autocomplete(n) == result
